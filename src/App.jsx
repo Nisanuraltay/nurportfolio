@@ -53,7 +53,7 @@ export default function App() {
       
       {/* NAVIGATION */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#020617]/80 backdrop-blur-md border-b border-slate-800/50">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div clgitassName="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="cursor-pointer group" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
             <div className={`text-lg font-bold ${brandColor} tracking-tighter uppercase leading-none`}>
               {personalInfo.name}
