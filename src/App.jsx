@@ -23,7 +23,7 @@ export default function App() {
 
   const personalInfo = {
     name: "Nur ALTAY",
-    title: "Data Analyst & Industrial Specialist",
+    title: "Data Analyst",
     email: "nisanuraltay07@gmail.com", 
     linkedin: "https://www.linkedin.com/in/nisanuraltay", 
     github: "https://github.com/Nisanuraltay/nurportfolio",
@@ -190,9 +190,9 @@ export default function App() {
               },
               { 
                 title: "Reddit Finance & ML Prediction", 
-                desc: "Analyzing finance communities and predicting post engagement using Machine Learning and BigQuery.", 
+                desc: "Data mining and EDA of investment communities. Built ML models to predict post engagement and visualized strategic insights via Looker Studio.", 
                 tags: ["ML", "BigQuery", "Streamlit"], 
-                img: "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=800",
+                img: "/reddit-cover.png",
                 github: "https://github.com/Nisanuraltay/reddit_finance_post_analyzer",
                 demo: "https://redditfinancepostanalyzer-5mfm2rzneimsv8pwaa9rpt.streamlit.app/"
               }
