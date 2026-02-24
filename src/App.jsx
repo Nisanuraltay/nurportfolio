@@ -23,7 +23,7 @@ export default function App() {
 
   const personalInfo = {
     name: "Nur ALTAY",
-    title: "Data Analyst & Architect",
+    title: "Data Analyst & Industrial Specialist",
     email: "nisanuraltay07@gmail.com", 
     linkedin: "https://www.linkedin.com/in/nisanuraltay", 
     github: "https://github.com/Nisanuraltay/nurportfolio",
@@ -39,21 +39,20 @@ export default function App() {
   }, []);
 
   const copyToClipboard = () => {
-     navigator.clipboard.writeText(personalInfo.email);
-     setCopied(true);
-    setTimeout(() => setCopied(false), 2000); // 2 saniye sonra bildirim kaybolur
+       navigator.clipboard.writeText(personalInfo.email);
+       setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
   };
 
   const brandColor = "text-[#00ced1]";
   const brandBg = "bg-[#00ced1]";
-
 
   return (
     <div className="bg-[#020617] min-h-screen text-white selection:bg-cyan-500/30 font-['Inter',_sans-serif] scroll-smooth">
       
       {/* NAVIGATION */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#020617]/80 backdrop-blur-md border-b border-slate-800/50">
-        <div clgitassName="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="cursor-pointer group" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
             <div className={`text-lg font-bold ${brandColor} tracking-tighter uppercase leading-none`}>
               {personalInfo.name}
@@ -64,7 +63,7 @@ export default function App() {
           </div>
           
           <div className="hidden md:flex items-center gap-8">
-            <a href="#about" className="text-slate-400 hover:text-white transition-colors text-xs font-semibold uppercase tracking-wider font-bold">About Me</a>
+            <a href="#about" className="text-slate-400 hover:text-white transition-colors text-xs font-semibold uppercase tracking-wider font-bold">Pathway</a>
             <a href="#skills" className="text-slate-400 hover:text-white transition-colors text-xs font-semibold uppercase tracking-wider font-bold">Skills</a>
             <a href="#projects" className="text-slate-400 hover:text-white transition-colors text-xs font-semibold uppercase tracking-wider font-bold">Projects</a>
             <a href="#contact" className={`${brandBg} text-slate-900 px-5 py-2 rounded-xl font-bold text-xs transition-all active:scale-95 uppercase`}>Get In Touch</a>
@@ -78,19 +77,19 @@ export default function App() {
         </div>
       </nav>
 
-      {/* HERO SECTION */}
+      {/* HERO SECTION - ASAŞ OPTIMIZED */}
       <section className="relative pt-44 pb-32 px-6 text-center overflow-hidden">
         <div 
           className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-300"
           style={{ background: `radial-gradient(500px at ${mousePos.x}px ${mousePos.y}px, rgba(0, 206, 209, 0.15), transparent 80%)` }}
         />
         <div className="max-w-4xl mx-auto relative z-10">
-          <h1 className="text-3xl md:text-5xl font-black mb-8 tracking-tight leading-tight uppercase">
-            Designing spaces was my past; <br /> 
-            <span className={brandColor}>decoding data</span> is my future.
+          <h1 className="text-3xl md:text-5xl font-black mb-8 tracking-tight leading-tight uppercase text-white">
+            Bridging Industrial Expertise <br /> 
+            with <span className={brandColor}>Data Analytics</span>
           </h1>
           <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-12 font-medium">
-            Architectural thinking meets data analytics. I focus on uncovering hidden stories in datasets to produce tangible results.
+            Transforming manufacturing and energy data into sustainable insights. I specialize in digitizing production processes and driving efficiency through data-driven decision making.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
@@ -108,7 +107,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* CAREER JOURNEY */}
+      {/* CAREER JOURNEY - ASAŞ OPTIMIZED */}
       <section id="about" className="py-24 px-6 relative bg-[#020617] scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -117,9 +116,24 @@ export default function App() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { id: "01", title: "Architectural Foundation", desc: "4 years in facade engineering, focusing on project management and technical analysis.", icon: <Building2 size={20} /> },
-              { id: "02", title: "Data Analytics Training", desc: "Specialized in Python, SQL, and statistical analysis to bridge domain knowledge.", icon: <LineChart size={20} /> },
-              { id: "03", title: "Career Transition", desc: "Merging architectural expertise with data science to drive AEC industry innovation.", icon: <Zap size={20} /> }
+              { 
+                id: "01", 
+                title: "Industrial Foundation", 
+                desc: "4 years of technical field and project management experience in the aluminum industry. Mastering production workflows and material tracking at the source.", 
+                icon: <Building2 size={20} /> 
+              },
+              { 
+                id: "02", 
+                title: "Data Transformation", 
+                desc: "Merging sector expertise with Python, SQL, and Power BI to transition manual tracking into robust digital reporting systems and sustainability datasets.", 
+                icon: <LineChart size={20} /> 
+              },
+              { 
+                id: "03", 
+                title: "Sustainability & Insight", 
+                desc: "Driving strategic decision-making through energy efficiency analysis, cross-functional data coordination, and impactful sustainability reporting.", 
+                icon: <Zap size={20} /> 
+              }
             ].map((step, i) => (
               <div key={i} className="bg-[#0f172a]/50 p-8 rounded-[2rem] border border-slate-800 hover:border-cyan-500/30 transition-all group">
                 <div className="flex items-center gap-3 mb-4">
@@ -140,17 +154,16 @@ export default function App() {
           <span className={`text-[10px] font-bold uppercase tracking-[0.3em] ${brandColor}`}>SKILLS</span>
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight mt-2 uppercase">Tools & Technologies</h2>
           <p className="text-slate-400 text-sm md:text-base max-w-2xl mx-auto mb-16 font-medium leading-relaxed">
-            My background in architecture has given me problem-solving and analytical thinking skills. 
-            Now I am applying these skills to the field of data analysis.
+            Leveraging analytical thinking from industrial projects to deliver high-impact data solutions.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
             {[
-              { title: "Data Visualization", icon: <BarChart3 size={20} />, skills: ["Power BI", "Tableau", "Matplotlib"] },
+              { title: "Data Visualization", icon: <BarChart3 size={20} />, skills: ["Power BI", "Tableau", "Seaborn"] },
               { title: "SQL & Databases", icon: <Database size={20} />, skills: ["PostgreSQL", "MySQL", "BigQuery"] },
-              { title: "Statistical Analysis", icon: <LineChart size={20} />, skills: ["Regression", "A/B Testing", "Forecasting"] },
-              { title: "Programming", icon: <Code2 size={20} />, skills: ["Python", "R", "Excel VBA"] },
-              { title: "ETL & Pipelines", icon: <Layers size={20} />, skills: ["Pandas", "Airflow", "dbt"] },
-              { title: "Domain Expertise", icon: <Building2 size={20} />, skills: ["Construction", "Facade Systems", "Project Analysis"] }
+              { title: "Statistical Analysis", icon: <LineChart size={20} />, skills: ["Regression", "Time Series", "Forecasting"] },
+              { title: "Programming", icon: <Code2 size={20} />, skills: ["Python", "Pandas", "NumPy"] },
+              { title: "ETL & Pipelines", icon: <Layers size={20} />, skills: ["Data Cleaning", "Automation", "Excel VBA"] },
+              { title: "Domain Expertise", icon: <Building2 size={20} />, skills: ["Aluminum Production", "Energy Monitoring", "Sustainability"] }
             ].map((cat, i) => (
               <div key={i} className="bg-[#0f172a]/40 p-6 rounded-[1.8rem] border border-slate-800/50 hover:border-cyan-500/30 transition-all flex flex-col items-start gap-3 group">
                 <div className="flex items-center gap-3">
@@ -170,33 +183,33 @@ export default function App() {
         </div>
       </section>
 
-      {/* PROJECTS SECTION */}
+      {/* PROJECTS SECTION - ASAŞ OPTIMIZED */}
       <section id="projects" className="py-24 px-6 bg-[#020617] scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className={`text-[10px] font-bold uppercase tracking-[0.3em] ${brandColor}`}>PORTFOLIO</span>
             <h2 className="text-3xl md:text-4xl font-extrabold mt-2 tracking-tight uppercase">Featured Projects</h2>
             <p className="text-slate-400 text-sm md:text-base mt-4 max-w-2xl mx-auto font-medium leading-relaxed">
-              Sample projects I developed using my data analysis skills, focusing on energy efficiency and industrial sustainability.
+              Targeted analytical solutions for industrial efficiency and environmental impact.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { 
                 title: "Manufacturing Energy Efficiency", 
-                desc: "Analysis of energy consumption trends in aluminum production lines and creating datasets for sustainability reporting.", 
-                tags: ["Python", "Pandas", "Sustainability"], 
+                desc: "Analyzing energy consumption patterns across production lines to support ESG goals and sustainability benchmarks.", 
+                tags: ["Python", "Sustainability", "ETL"], 
                 img: "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800" 
               },
               { 
                 title: "Supply Chain Performance", 
-                desc: "Comprehensive analysis of global shipping data for logistics optimization and inter-departmental data coordination.", 
+                desc: "End-to-end analysis of global shipping and material logs to enhance inter-departmental data transparency.", 
                 tags: ["SQL", "Power BI", "Logistics"], 
                 img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800" 
               },
               { 
-                title: "Smart City AQI Analysis", 
-                desc: "Correlation analysis between urban traffic density and Air Quality Index (AQI) for environmental impact assessment.", 
+                title: "Industrial AQI Monitoring", 
+                desc: "Correlating factory output data with environmental metrics for precise air quality and impact reporting.", 
                 tags: ["Python", "EDA", "Environment"], 
                 img: "https://images.unsplash.com/photo-1545147986-a9d6f210df77?q=80&w=800" 
               }
@@ -222,64 +235,28 @@ export default function App() {
         </div>
       </section>
 
-      {/* LET'S WORK TOGETHER (Contact Section) */}
-<section id="contact" className="py-32 px-6 text-center scroll-mt-20">
-  <div className="max-w-3xl mx-auto relative">
-    
-    {/* Kopyalandı Bildirimi - Butonun hemen üzerinde çıkar */}
-    {copied && (
-      <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-[#00ced1] text-slate-900 px-4 py-2 rounded-xl text-xs font-bold shadow-lg animate-in fade-in zoom-in duration-300">
-        Email Address Copied!
-      </div>
-    )}
+      {/* CONTACT SECTION */}
+      <section id="contact" className="py-32 px-6 text-center scroll-mt-20">
+        <div className="max-w-3xl mx-auto relative">
+          {copied && (
+            <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-[#00ced1] text-slate-900 px-4 py-2 rounded-xl text-xs font-bold shadow-lg">
+              Email Address Copied!
+            </div>
+          )}
+          <span className={`text-[10px] font-bold uppercase tracking-[0.4em] ${brandColor} mb-4 block`}>CONTACT</span>
+          <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tight uppercase">Let's Work Together</h2>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
+            <a href={`mailto:${personalInfo.email}`} onClick={copyToClipboard} className="w-full md:w-64 h-16 bg-[#00ced1] text-slate-900 rounded-2xl flex items-center justify-center gap-3 font-bold text-lg hover:shadow-lg hover:shadow-cyan-500/20 transition-all active:scale-95">
+              <Mail size={22} strokeWidth={2.5} /> Email Me
+            </a>
+            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="w-full md:w-64 h-16 bg-transparent border-2 border-slate-700 hover:border-cyan-500/50 rounded-2xl flex items-center justify-center gap-3 font-bold text-lg transition-all active:scale-95">
+              <Linkedin size={22} strokeWidth={2.5} /> LinkedIn ↗
+            </a>
+          </div>
+        </div>
+      </section>
 
-    <span className={`text-[10px] font-bold uppercase tracking-[0.4em] ${brandColor} mb-4 block`}>CONTACT</span>
-    <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tight uppercase">Let's Work Together</h2>
-    
-    <p className="text-slate-400 text-base md:text-lg mb-12 leading-relaxed max-w-2xl mx-auto font-medium">
-      Ready to bring data-driven clarity to your next project. Let's discuss how I can help.
-    </p>
-    
-    <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
-      {/* Email Butonu - Hem mail açar hem kopyalar */}
-      <a 
-        href={`mailto:${personalInfo.email}`}
-        onClick={(e) => {
-          // Eğer mail uygulaması açılmazsa diye kopyalama fonksiyonunu çalıştırıyoruz
-          copyToClipboard();
-        }}
-        className="w-full md:w-64 h-16 bg-[#00ced1] text-slate-900 rounded-2xl flex items-center justify-center gap-3 font-bold text-lg hover:shadow-lg hover:shadow-cyan-500/20 transition-all active:scale-95 shadow-xl"
-      >
-        <Mail size={22} strokeWidth={2.5} /> Email Me
-      </a>
-      
-      <a 
-        href={personalInfo.linkedin} 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className="w-full md:w-64 h-16 bg-transparent border-2 border-slate-700 hover:border-cyan-500/50 rounded-2xl flex items-center justify-center gap-3 font-bold text-lg transition-all active:scale-95"
-      >
-        <Linkedin size={22} strokeWidth={2.5} /> LinkedIn ↗
-      </a>
-    </div>
-
-    {/* Alt taraftaki küçük ikonlar */}
-    <div className="flex items-center justify-center gap-4 pt-8 border-t border-slate-900">
-      <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-slate-900/50 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-all">
-        <Github size={20} />
-      </a>
-      <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-slate-900/50 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-all">
-        <Linkedin size={20} />
-      </a>
-      {/* Küçük mail ikonu da kopyalama yapsın */}
-      <button onClick={copyToClipboard} className="w-12 h-12 rounded-full bg-slate-900/50 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-all">
-        <Mail size={20} />
-      </button>
-    </div>
-  </div>
-</section>
-
-<footer className="py-12 border-t border-slate-900 px-6 text-center">
+      <footer className="py-12 border-t border-slate-900 px-6 text-center">
         <p className="text-slate-600 text-[10px] uppercase tracking-[0.4em] font-bold">© 2026 {personalInfo.name} • BASED IN TURKEY</p>
       </footer>
     </div>
