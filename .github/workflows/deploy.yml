@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # Dal adın 'master' ise burayı master yap
+    branches: [ gh-pages ] # Dal adın 'master' ise burayı master yap
 
 permissions:
   contents: write
