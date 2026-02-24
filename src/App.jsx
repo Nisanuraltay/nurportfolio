@@ -176,12 +176,30 @@ export default function App() {
           <div className="text-center mb-16">
             <span className={`text-[10px] font-bold uppercase tracking-[0.3em] ${brandColor}`}>PORTFOLIO</span>
             <h2 className="text-3xl md:text-4xl font-extrabold mt-2 tracking-tight uppercase">Featured Projects</h2>
+            <p className="text-slate-400 text-sm md:text-base mt-4 max-w-2xl mx-auto font-medium leading-relaxed">
+              Sample projects I developed using my data analysis skills, focusing on energy efficiency and industrial sustainability.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Facade Cost Analysis", desc: "Data visualization dashboard for AEC cost optimization.", tags: ["Power BI", "Python"], img: "https://images.unsplash.com/photo-1551288049-bbbda536ad80?q=80&w=800" },
-              { title: "Timeline Prediction", desc: "ML model predicting construction completion times.", tags: ["Python", "ML"], img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800" },
-              { title: "Material Inventory", desc: "SQL-based inventory optimization for AEC projects.", tags: ["SQL", "Tableau"], img: "https://images.unsplash.com/photo-1586769852044-692d6e3703f0?q=80&w=800" }
+              { 
+                title: "Manufacturing Energy Efficiency", 
+                desc: "Analysis of energy consumption trends in aluminum production lines and creating datasets for sustainability reporting.", 
+                tags: ["Python", "Pandas", "Sustainability"], 
+                img: "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800" 
+              },
+              { 
+                title: "Supply Chain Performance", 
+                desc: "Comprehensive analysis of global shipping data for logistics optimization and inter-departmental data coordination.", 
+                tags: ["SQL", "Power BI", "Logistics"], 
+                img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800" 
+              },
+              { 
+                title: "Smart City AQI Analysis", 
+                desc: "Correlation analysis between urban traffic density and Air Quality Index (AQI) for environmental impact assessment.", 
+                tags: ["Python", "EDA", "Environment"], 
+                img: "https://images.unsplash.com/photo-1545147986-a9d6f210df77?q=80&w=800" 
+              }
             ].map((proj, i) => (
               <div key={i} className="bg-[#0f172a]/50 rounded-[2rem] overflow-hidden border border-slate-800 hover:border-cyan-500/30 transition-all group">
                 <div className="h-48 overflow-hidden relative">
