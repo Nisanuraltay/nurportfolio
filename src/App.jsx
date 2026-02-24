@@ -77,19 +77,19 @@ export default function App() {
         </div>
       </nav>
 
-      {/* HERO SECTION - ASAŞ OPTIMIZED */}
+      {/* HERO SECTION - PROTECTED TITLE */}
       <section className="relative pt-44 pb-32 px-6 text-center overflow-hidden">
         <div 
           className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-300"
           style={{ background: `radial-gradient(500px at ${mousePos.x}px ${mousePos.y}px, rgba(0, 206, 209, 0.15), transparent 80%)` }}
         />
         <div className="max-w-4xl mx-auto relative z-10">
-          <h1 className="text-3xl md:text-5xl font-black mb-8 tracking-tight leading-tight uppercase text-white">
-            Bridging Industrial Expertise <br /> 
-            with <span className={brandColor}>Data Analytics</span>
+          <h1 className="text-3xl md:text-5xl font-black mb-8 tracking-tight leading-tight uppercase">
+            Designing spaces was my past; <br /> 
+            <span className={brandColor}>decoding data</span> is my future.
           </h1>
           <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-12 font-medium">
-            Transforming manufacturing and energy data into sustainable insights. I specialize in digitizing production processes and driving efficiency through data-driven decision making.
+            Architectural thinking meets data analytics. I focus on uncovering hidden stories in industrial and financial datasets to produce tangible results.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
@@ -107,7 +107,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* CAREER JOURNEY - ASAŞ OPTIMIZED */}
+      {/* CAREER JOURNEY */}
       <section id="about" className="py-24 px-6 relative bg-[#020617] scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -116,24 +116,9 @@ export default function App() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { 
-                id: "01", 
-                title: "Industrial Foundation", 
-                desc: "4 years of technical field and project management experience in the aluminum industry. Mastering production workflows and material tracking at the source.", 
-                icon: <Building2 size={20} /> 
-              },
-              { 
-                id: "02", 
-                title: "Data Transformation", 
-                desc: "Merging sector expertise with Python, SQL, and Power BI to transition manual tracking into robust digital reporting systems and sustainability datasets.", 
-                icon: <LineChart size={20} /> 
-              },
-              { 
-                id: "03", 
-                title: "Sustainability & Insight", 
-                desc: "Driving strategic decision-making through energy efficiency analysis, cross-functional data coordination, and impactful sustainability reporting.", 
-                icon: <Zap size={20} /> 
-              }
+              { id: "01", title: "Industrial Foundation", desc: "4 years of technical field and project management experience in the aluminum facade systems industry.", icon: <Building2 size={20} /> },
+              { id: "02", title: "Data Transformation", desc: "Merging sector expertise with Python, SQL, and Power BI to transition manual processes into digital reporting systems.", icon: <LineChart size={20} /> },
+              { id: "03", title: "Sustainability & Insight", desc: "Focusing on driving strategic decision-making through energy efficiency analysis and cross-functional data coordination.", icon: <Zap size={20} /> }
             ].map((step, i) => (
               <div key={i} className="bg-[#0f172a]/50 p-8 rounded-[2rem] border border-slate-800 hover:border-cyan-500/30 transition-all group">
                 <div className="flex items-center gap-3 mb-4">
@@ -148,29 +133,24 @@ export default function App() {
         </div>
       </section>
 
-      {/* TOOLS & TECHNOLOGIES */}
+      {/* SKILLS */}
       <section id="skills" className="py-24 px-6 bg-[#030a1c]/30 scroll-mt-20">
         <div className="max-w-5xl mx-auto text-center">
           <span className={`text-[10px] font-bold uppercase tracking-[0.3em] ${brandColor}`}>SKILLS</span>
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight mt-2 uppercase">Tools & Technologies</h2>
-          <p className="text-slate-400 text-sm md:text-base max-w-2xl mx-auto mb-16 font-medium leading-relaxed">
-            Leveraging analytical thinking from industrial projects to deliver high-impact data solutions.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-left mt-12">
             {[
-              { title: "Data Visualization", icon: <BarChart3 size={20} />, skills: ["Power BI", "Tableau", "Seaborn"] },
-              { title: "SQL & Databases", icon: <Database size={20} />, skills: ["PostgreSQL", "MySQL", "BigQuery"] },
-              { title: "Statistical Analysis", icon: <LineChart size={20} />, skills: ["Regression", "Time Series", "Forecasting"] },
-              { title: "Programming", icon: <Code2 size={20} />, skills: ["Python", "Pandas", "NumPy"] },
-              { title: "ETL & Pipelines", icon: <Layers size={20} />, skills: ["Data Cleaning", "Automation", "Excel VBA"] },
-              { title: "Domain Expertise", icon: <Building2 size={20} />, skills: ["Aluminum Production", "Energy Monitoring", "Sustainability"] }
+              { title: "Data Visualization", icon: <BarChart3 size={20} />, skills: ["Power BI", "Tableau", "Looker Studio"] },
+              { title: "SQL & Databases", icon: <Database size={20} />, skills: ["PostgreSQL", "BigQuery", "MySQL"] },
+              { title: "Programming", icon: <Code2 size={20} />, skills: ["Python", "Pandas", "NumPy", "Streamlit"] },
+              { title: "Domain Expertise", icon: <Building2 size={20} />, skills: ["AEC Industry", "Manufacturing", "Supply Chain"] }
             ].map((cat, i) => (
-              <div key={i} className="bg-[#0f172a]/40 p-6 rounded-[1.8rem] border border-slate-800/50 hover:border-cyan-500/30 transition-all flex flex-col items-start gap-3 group">
-                <div className="flex items-center gap-3">
+              <div key={i} className="bg-[#0f172a]/40 p-6 rounded-[1.8rem] border border-slate-800/50 hover:border-cyan-500/30 transition-all group">
+                <div className="flex items-center gap-3 mb-4">
                   <div className={`${brandColor} bg-cyan-500/10 p-2.5 rounded-xl`}>{cat.icon}</div>
                   <h3 className="text-base font-bold text-slate-100">{cat.title}</h3>
                 </div>
-                <div className="flex flex-wrap gap-1.5 mt-1">
+                <div className="flex flex-wrap gap-1.5">
                   {cat.skills.map((skill) => (
                     <span key={skill} className="px-3 py-1 bg-slate-800/60 text-slate-400 text-[10px] font-bold rounded-full border border-slate-700/30 uppercase tracking-tight">
                       {skill}
@@ -183,35 +163,38 @@ export default function App() {
         </div>
       </section>
 
-      {/* PROJECTS SECTION - ASAŞ OPTIMIZED */}
+      {/* PROJECTS SECTION */}
       <section id="projects" className="py-24 px-6 bg-[#020617] scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className={`text-[10px] font-bold uppercase tracking-[0.3em] ${brandColor}`}>PORTFOLIO</span>
             <h2 className="text-3xl md:text-4xl font-extrabold mt-2 tracking-tight uppercase">Featured Projects</h2>
-            <p className="text-slate-400 text-sm md:text-base mt-4 max-w-2xl mx-auto font-medium leading-relaxed">
-              Targeted analytical solutions for industrial efficiency and environmental impact.
-            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { 
                 title: "Manufacturing Energy Efficiency", 
-                desc: "Analyzing energy consumption patterns across production lines to support ESG goals and sustainability benchmarks.", 
+                desc: "Analysis of energy consumption trends in production lines to support sustainability reporting and efficiency goals.", 
                 tags: ["Python", "Sustainability", "ETL"], 
-                img: "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800" 
+                img: "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800",
+                github: "https://github.com/Nisanuraltay/manufacturing-energy-efficiency",
+                demo: "#"
               },
               { 
                 title: "Supply Chain Performance", 
-                desc: "End-to-end analysis of global shipping and material logs to enhance inter-departmental data transparency.", 
-                tags: ["SQL", "Power BI", "Logistics"], 
-                img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800" 
+                desc: "A comprehensive analysis of supply chain dynamics including inventory alignment, lead times, and logistics cost optimization.", 
+                tags: ["SQL", "Power BI", "Python"], 
+                img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800",
+                github: "https://github.com/Nisanuraltay/supply-chain-performance-analysis",
+                demo: "#"
               },
               { 
-                title: "Industrial AQI Monitoring", 
-                desc: "Correlating factory output data with environmental metrics for precise air quality and impact reporting.", 
-                tags: ["Python", "EDA", "Environment"], 
-                img: "https://images.unsplash.com/photo-1545147986-a9d6f210df77?q=80&w=800" 
+                title: "Reddit Finance & ML Prediction", 
+                desc: "Analyzing finance communities and predicting post engagement using Machine Learning and BigQuery.", 
+                tags: ["ML", "BigQuery", "Streamlit"], 
+                img: "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=800",
+                github: "https://github.com/Nisanuraltay/reddit_finance_post_analyzer",
+                demo: "https://redditfinancepostanalyzer-5mfm2rzneimsv8pwaa9rpt.streamlit.app/"
               }
             ].map((proj, i) => (
               <div key={i} className="bg-[#0f172a]/50 rounded-[2rem] overflow-hidden border border-slate-800 hover:border-cyan-500/30 transition-all group">
@@ -225,8 +208,10 @@ export default function App() {
                     {proj.tags.map(t => <span key={t} className="px-3 py-1 bg-cyan-500/10 text-[#00ced1] text-[9px] font-bold rounded-lg uppercase tracking-widest">{t}</span>)}
                   </div>
                   <div className="flex gap-4 pt-4 border-t border-slate-800/30">
-                    <button className="text-[10px] font-bold text-slate-400 hover:text-white flex items-center gap-1.5 uppercase tracking-widest"><Github size={14} /> Code</button>
-                    <button className="text-[10px] font-bold text-slate-400 hover:text-white flex items-center gap-1.5 uppercase tracking-widest"><ExternalLink size={14} /> Demo</button>
+                    <a href={proj.github} target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold text-slate-400 hover:text-white flex items-center gap-1.5 uppercase tracking-widest"><Github size={14} /> Code</a>
+                    {proj.demo !== "#" && (
+                      <a href={proj.demo} target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold text-slate-400 hover:text-white flex items-center gap-1.5 uppercase tracking-widest"><ExternalLink size={14} /> Demo</a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -235,7 +220,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
+      {/* CONTACT */}
       <section id="contact" className="py-32 px-6 text-center scroll-mt-20">
         <div className="max-w-3xl mx-auto relative">
           {copied && (
@@ -246,7 +231,7 @@ export default function App() {
           <span className={`text-[10px] font-bold uppercase tracking-[0.4em] ${brandColor} mb-4 block`}>CONTACT</span>
           <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tight uppercase">Let's Work Together</h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
-            <a href={`mailto:${personalInfo.email}`} onClick={copyToClipboard} className="w-full md:w-64 h-16 bg-[#00ced1] text-slate-900 rounded-2xl flex items-center justify-center gap-3 font-bold text-lg hover:shadow-lg hover:shadow-cyan-500/20 transition-all active:scale-95">
+            <a href={`mailto:${personalInfo.email}`} onClick={copyToClipboard} className="w-full md:w-64 h-16 bg-[#00ced1] text-slate-900 rounded-2xl flex items-center justify-center gap-3 font-bold text-lg hover:shadow-lg hover:shadow-cyan-500/20 transition-all active:scale-95 shadow-xl">
               <Mail size={22} strokeWidth={2.5} /> Email Me
             </a>
             <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="w-full md:w-64 h-16 bg-transparent border-2 border-slate-700 hover:border-cyan-500/50 rounded-2xl flex items-center justify-center gap-3 font-bold text-lg transition-all active:scale-95">
