@@ -192,7 +192,7 @@ export default function App() {
                 title: "Reddit Finance & ML Prediction", 
                 desc: "Data mining and EDA of investment communities. Built ML models to predict post engagement and visualized strategic insights via Looker Studio.", 
                 tags: ["BigQuery","Jupyter Notebook", "ML","Streamlit"], 
-                img: "/reddit-cover.png",
+                img: "reddit-cover.png",
                 github: "https://github.com/Nisanuraltay/reddit_finance_post_analyzer",
                 demo: "https://redditfinancepostanalyzer-5mfm2rzneimsv8pwaa9rpt.streamlit.app/"
               }
