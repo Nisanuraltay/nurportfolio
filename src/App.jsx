@@ -87,7 +87,7 @@ export default function App() {
       desc: "Reddit'in r/finance topluluğundaki gönderilerin NLP ve makine öğrenimi ile duygu analizi ve etkileşim tahmini. BigQuery üzerinde EDA, Scikit-learn ile model geliştirme, Looker Studio ile görselleştirme.",
       impact: "Sınıflandırma modelinde %82 doğruluk · 50.000+ gönderi işlendi · Streamlit ile canlı demo sunuldu",
       tags: ["Python", "Machine Learning", "BigQuery", "Looker Studio", "NLP"], 
-      img: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=800",
+      img: "/reddit-cover.png",
       github: "https://github.com/Nisanuraltay/reddit_finance_post_analyzer",
       demo: "https://redditfinancepostanalyzer-5mfm2rzneimsv8pwaa9rpt.streamlit.app/",
       highlight: false,
@@ -151,13 +151,13 @@ export default function App() {
           </div>
           
           <div className="hidden md:flex items-center gap-8">
-            {['Hakkımda', 'Beceriler', 'Projeler'].map((item) => (
+            {['About', 'Skills', 'Projects'].map((item) => (
               <a key={item} href={`#${item.toLowerCase()}`} className="text-slate-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-wider">
                 {item}
               </a>
             ))}
-            <a href="#iletisim" className="bg-[#00ced1] text-slate-900 px-5 py-2 rounded-xl font-bold text-xs transition-all hover:bg-cyan-400 active:scale-95 uppercase">
-              İletişim
+            <a href="#contact" className="bg-[#00ced1] text-slate-900 px-5 py-2 rounded-xl font-bold text-xs transition-all hover:bg-cyan-400 active:scale-95 uppercase">
+              Contact
             </a>
           </div>
 
@@ -170,7 +170,7 @@ export default function App() {
 
         {isMenuOpen && (
           <div className="md:hidden absolute top-16 left-0 w-full bg-[#020617] border-b border-slate-800 px-6 py-8 flex flex-col gap-6 shadow-2xl">
-            {['Hakkımda', 'Beceriler', 'Projeler', 'İletişim'].map((item) => (
+            {['About', 'Skills', 'Projects', 'Contact'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`} 
@@ -186,68 +186,76 @@ export default function App() {
 
       {/* ─── HERO ─────────────────────────────────────────────────── */}
       <section className="relative pt-32 md:pt-44 pb-20 md:pb-32 px-6 overflow-hidden">
-        {/* Mouse glow */}
         <div 
-          className="hidden md:block pointer-events-none absolute inset-0 z-0 opacity-60"
-          style={{ background: `radial-gradient(700px at ${mousePos.x}px ${mousePos.y}px, rgba(0, 206, 209, 0.12), transparent 80%)` }}
+          className="hidden md:block pointer-events-none absolute inset-0 z-0"
+          style={{ background: `radial-gradient(900px at ${mousePos.x}px ${mousePos.y}px, rgba(0, 206, 209, 0.25), transparent 70%)` }}
         />
         {/* Subtle grid bg */}
         <div className="pointer-events-none absolute inset-0 z-0 opacity-[0.03]" style={{backgroundImage: 'linear-gradient(rgba(0,206,209,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,206,209,1) 1px, transparent 1px)', backgroundSize: '60px 60px'}} />
 
         <div className="max-w-4xl mx-auto relative z-10 text-center">
 
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-4 py-1.5 mb-8">
-            <span className="w-2 h-2 bg-[#00ced1] rounded-full animate-pulse"></span>
-            <span className="text-[#00ced1] text-[10px] font-bold uppercase tracking-widest">Pozisyonlara Açık · Open to Work</span>
-          </div>
-
           <h1 className="text-3xl md:text-6xl font-black mb-6 tracking-tight leading-tight">
-            Ham veriden <span className="text-[#00ced1]">stratejik karara.</span>
+            From raw data to <span className="text-[#00ced1]">strategic decisions.</span>
           </h1>
 
-          <p className="text-slate-400 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed mb-4 font-medium">
-            Python, SQL ve Power BI ile veri analizi, raporlama ve süreç optimizasyonu alanlarında deneyim sahibiyim. Supply chain, enerji/sürdürülebilirlik ve fintech projelerinde veri odaklı çözümler ürettim.
+          <p className="text-slate-400 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed mb-10 font-medium">
+            Data Analyst with a background in architecture and technical project management. I leverage Python, SQL, and Power BI to turn complex datasets into actionable insights — across supply chain, manufacturing, and sustainability domains.
           </p>
 
 
           
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-            <a href="#iletisim" className="bg-[#00ced1] w-full md:w-auto text-slate-900 px-8 py-4 rounded-2xl font-bold text-sm transition-all hover:bg-cyan-400 shadow-lg shadow-cyan-500/20 active:scale-95 uppercase">
-              İletişime Geç
+            <a href="#contact" className="bg-[#00ced1] w-full md:w-auto text-slate-900 px-8 py-4 rounded-2xl font-bold text-sm transition-all hover:bg-cyan-400 shadow-lg shadow-cyan-500/20 active:scale-95 uppercase">
+              Get In Touch
             </a>
             <a 
               href={personalInfo.cvPath} 
               download 
               className="w-full md:w-auto bg-slate-900/50 border-2 border-slate-800 hover:border-slate-600 text-slate-300 px-8 py-4 rounded-2xl font-bold text-sm transition-all active:scale-95 uppercase flex items-center justify-center gap-2"
             >
-              <Download size={18} /> CV İndir
+              <Download size={18} /> Download CV
             </a>
           </div>
         </div>
       </section>
 
       {/* ─── HAKKIMDA / DENEYİM ──────────────────────────────────── */}
-      <section id="hakkımda" className="py-20 md:py-24 px-6 bg-[#030a1c]/40 scroll-mt-20">
+      <section id="about" className="py-20 md:py-24 px-6 bg-[#030a1c]/40 scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#00ced1]">HAKKIMDA</span>
-            <h2 className="text-2xl md:text-4xl font-extrabold mt-2 tracking-tight">Kariyer Yolculuğu</h2>
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#00ced1]">ABOUT</span>
+            <h2 className="text-2xl md:text-4xl font-extrabold mt-2 tracking-tight">Career Journey</h2>
           </div>
 
           {/* About text */}
           <div className="max-w-3xl mx-auto mb-14 text-center">
             <p className="text-slate-300 text-sm md:text-base leading-relaxed">
-              Endüstri Mühendisliği temelli analitik bakış açımı, Python ve SQL ile veri analizi pratiğine dönüştürdüm. 
-              Supply chain, üretim verimliliği ve sürdürülebilirlik gibi operasyonel alanlarda veri setleri oluşturma, 
-              dijitalleştirme ve raporlama süreçlerinde deneyim kazandım. 
-              Farklı departmanlarla koordineli çalışmayı ve veriyi karar destek aracına dönüştürmeyi öncelikli hedefim olarak benimsiyorum.
+              My career began in architecture — managing complex technical projects, coordinating cross-functional teams, 
+              and optimizing production processes in aluminum facade and construction systems. 
+              Over the years I developed a sharp eye for process inefficiency and a habit of working with structured data: 
+              production plans, ERP systems, cost analysis, and technical documentation. 
+              That foundation naturally led me into data analytics, where I now apply Python, SQL, and Power BI 
+              to turn operational complexity into clear, actionable insight.
             </p>
           </div>
 
           {/* Timeline */}
           <div className="max-w-3xl mx-auto space-y-6">
-            {experiences.map((exp, i) => (
+            {[
+              {
+                role: "Data Analysis & Reporting",
+                company: "Project-Based / Self-Directed",
+                period: "2025 – Present",
+                desc: "Building data analytics projects using Python, SQL, and Power BI across supply chain, energy efficiency, and user behavior domains. Developing automated reporting pipelines and interactive dashboards."
+              },
+              {
+                role: "Technical Project & Production Planning",
+                company: "VAlüminyum & TİAlüminyum ve Cephe Sistemleri",
+                period: "09.2022 – 11.2025",
+                desc: "Led end-to-end technical project management for aluminum facade and joinery manufacturing across two companies. Used Orgadata Logikal for system design and profile optimization; prepared CNC machining files and integrated them into the production workflow. Managed production planning, scheduling, and progress tracking through Excel-based systems — building structured workbooks for job tracking, revision control, and periodic reporting. Coordinated cross-functional communication between design, production, and on-site teams. Handled tender documentation, cost analysis support, and pre-production technical control. Delivered projects including Gaziantep Mövenpick Hotel, Famm Urla, Luna Vista Hotel, AYT T2 Airport Renovation, CW Enerji Fabrikası, Ben-Tour, Remax Aqua, and Tatsan Tarım."
+              }
+            ].map((exp, i) => (
               <div key={i} className="flex gap-5 bg-[#0f172a]/50 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/20 transition-all">
                 <div className="flex-shrink-0 mt-1">
                   <div className="w-3 h-3 rounded-full bg-[#00ced1] mt-1 ring-4 ring-cyan-500/10"></div>
@@ -267,12 +275,33 @@ export default function App() {
       </section>
 
       {/* ─── SKILLS ──────────────────────────────────────────────── */}
-      <section id="beceriler" className="py-20 md:py-24 px-6 scroll-mt-20">
+      <section id="skills" className="py-20 md:py-24 px-6 scroll-mt-20">
         <div className="max-w-5xl mx-auto text-center">
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#00ced1]">BECERILER</span>
-          <h2 className="text-2xl md:text-4xl font-extrabold mb-12 tracking-tight mt-2">Uzmanlık & Araçlar</h2>
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#00ced1]">SKILLS</span>
+          <h2 className="text-2xl md:text-4xl font-extrabold mb-12 tracking-tight mt-2">Expertise & Tools</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
-            {skillCategories.map((cat, i) => (
+            {[
+              { 
+                title: "Analytics & Reporting", 
+                icon: <BarChart3 size={20} />, 
+                skills: ["Power BI", "Tableau", "Looker Studio", "Dashboard Design", "KPI Tracking"] 
+              },
+              { 
+                title: "Data Architecture & Databases", 
+                icon: <Database size={20} />, 
+                skills: ["SQL", "BigQuery", "PostgreSQL", "Data Modeling", "Data Quality"] 
+              },
+              { 
+                title: "Programming & Analysis", 
+                icon: <Code2 size={20} />, 
+                skills: ["Python", "Pandas", "NumPy", "Scikit-Learn", "EDA", "NLP"] 
+              },
+              { 
+                title: "Process & Strategy", 
+                icon: <TrendingUp size={20} />, 
+                skills: ["Process Optimization", "Sustainability Reporting", "Cross-Dept Coordination", "Stakeholder Communication", "ERP Systems"] 
+              }
+            ].map((cat, i) => (
               <div key={i} className="bg-[#0f172a]/40 p-6 rounded-[1.5rem] border border-slate-800/50 hover:border-cyan-500/30 transition-all group">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="text-[#00ced1] bg-cyan-500/10 p-2.5 rounded-xl group-hover:scale-110 transition-transform">{cat.icon}</div>
@@ -289,11 +318,10 @@ export default function App() {
             ))}
           </div>
 
-          {/* Sektör eşleşmesi */}
           <div className="mt-10 bg-[#0f172a]/30 border border-slate-800/50 rounded-2xl p-6 text-left">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-[#00ced1] mb-3">Deneyim Kazanılan Sektörler</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#00ced1] mb-3">Sectors & Domains</p>
             <div className="flex flex-wrap gap-3">
-              {["Supply Chain & Lojistik", "Üretim & Endüstri", "Enerji & Sürdürülebilirlik", "Fintech & E-ticaret", "Medya & Dijital"].map(s => (
+              {["Supply Chain & Logistics", "Manufacturing & Industry", "Energy & Sustainability", "Fintech & E-commerce", "Architecture & Construction"].map(s => (
                 <span key={s} className="px-3 py-1.5 bg-cyan-500/10 text-[#00ced1] text-[10px] font-bold rounded-lg border border-cyan-500/20 uppercase tracking-wide">{s}</span>
               ))}
             </div>
@@ -302,12 +330,12 @@ export default function App() {
       </section>
 
       {/* ─── PROJECTS ─────────────────────────────────────────────── */}
-      <section id="projeler" className="py-20 md:py-24 px-6 bg-[#020617] scroll-mt-20">
+      <section id="projects" className="py-20 md:py-24 px-6 bg-[#020617] scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#00ced1]">PORTFOLYO</span>
-            <h2 className="text-2xl md:text-4xl font-extrabold mt-2 tracking-tight">Öne Çıkan Projeler</h2>
-            <p className="text-slate-500 text-xs mt-3 font-medium">Gerçek veri setleriyle yürütülen analiz çalışmaları</p>
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#00ced1]">PORTFOLIO</span>
+            <h2 className="text-2xl md:text-4xl font-extrabold mt-2 tracking-tight">Featured Projects</h2>
+            <p className="text-slate-500 text-xs mt-3 font-medium">Analysis work conducted on real-world datasets</p>
           </div>
 
           <div className="space-y-8">
@@ -324,7 +352,7 @@ export default function App() {
                 {proj.highlight && (
                   <div className="bg-gradient-to-r from-cyan-500/10 to-transparent px-6 py-2 border-b border-cyan-500/10">
                     <span className="text-[#00ced1] text-[9px] font-black uppercase tracking-widest flex items-center gap-1.5">
-                      <Activity size={10} /> Öne Çıkan Proje
+                      <Activity size={10} /> Featured Project
                     </span>
                   </div>
                 )}
@@ -352,7 +380,7 @@ export default function App() {
 
                       {/* Impact box */}
                       <div className="bg-slate-900/60 border border-slate-700/50 rounded-xl px-4 py-3 mb-4">
-                        <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-1">Proje Çıktısı / Etki</p>
+                        <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-1">Project Output / Impact</p>
                         <p className="text-slate-300 text-[11px] font-semibold leading-relaxed">{proj.impact}</p>
                       </div>
                     </div>
@@ -365,11 +393,11 @@ export default function App() {
                       </div>
                       <div className="flex gap-4">
                         <a href={proj.github} target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold text-slate-400 hover:text-white flex items-center gap-1.5 uppercase transition-colors">
-                          <Github size={14} /> Kaynak Kod
+                          <Github size={14} /> Source Code
                         </a>
                         {proj.demo && (
                           <a href={proj.demo} target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold text-[#00ced1] hover:text-white flex items-center gap-1.5 uppercase transition-colors">
-                            <ExternalLink size={14} /> Canlı Demo
+                            <ExternalLink size={14} /> Live Demo
                           </a>
                         )}
                       </div>
@@ -382,27 +410,26 @@ export default function App() {
         </div>
       </section>
 
-      {/* ─── NEDEN BEN — Asaş odaklı positioning ─────────────────── */}
       <section className="py-16 px-6 bg-[#030a1c]/40">
         <div className="max-w-5xl mx-auto text-center">
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#00ced1]">DEĞER ÖNERİSİ</span>
-          <h2 className="text-2xl md:text-3xl font-extrabold mt-2 mb-10 tracking-tight">Hangi İhtiyaca Cevap Veriyorum?</h2>
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#00ced1]">VALUE PROPOSITION</span>
+          <h2 className="text-2xl md:text-3xl font-extrabold mt-2 mb-10 tracking-tight">What I Bring to the Table</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               { 
                 icon: <Database size={22} />, 
-                title: "Veri Setleri & Dijitalleştirme", 
-                desc: "Farklı birimlerden gelen ham veriyi düzenli, izlenebilir ve güncel veri setlerine dönüştürme. Sürdürülebilirlik ve operasyonel raporlama altyapısı kurma." 
+                title: "Data Sets & Digitalization", 
+                desc: "Transforming raw data from multiple departments into structured, traceable, and up-to-date datasets. Building data infrastructure for sustainability and operational reporting." 
               },
               { 
                 icon: <BarChart3 size={22} />, 
-                title: "Raporlama & Karar Desteği", 
-                desc: "Üst yönetim için Power BI dashboard'ları ve periyodik raporlar. KPI takibi, trend analizi ve süreç performansının görselleştirilmesi." 
+                title: "Reporting & Decision Support", 
+                desc: "Power BI dashboards and periodic reports for senior management. KPI tracking, trend analysis, and visualization of process performance." 
               },
               { 
                 icon: <Globe size={22} />, 
-                title: "Çapraz Departman Koordinasyonu", 
-                desc: "Teknik ekip ile iş birimleri arasında köprü. Veri doğruluğu ve tutarlılığını sağlamak için süreç standartları oluşturma ve takip etme." 
+                title: "Cross-Department Coordination", 
+                desc: "Bridging technical teams and business units. Establishing process standards and tracking mechanisms to ensure data accuracy, consistency, and reliability." 
               }
             ].map((item, i) => (
               <div key={i} className="bg-[#0f172a]/50 p-7 rounded-[1.5rem] border border-slate-800 hover:border-cyan-500/30 transition-all group text-left">
@@ -416,13 +443,12 @@ export default function App() {
       </section>
 
       {/* ─── FOOTER / CONTACT ─────────────────────────────────────── */}
-      <footer id="iletisim" className="py-20 border-t border-slate-900 px-6 text-center">
+      <footer id="contact" className="py-20 border-t border-slate-900 px-6 text-center">
         <div className="max-w-xl mx-auto">
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#00ced1]">İLETİŞİM</span>
-          <h2 className="text-2xl md:text-3xl font-black mb-3 mt-2 tracking-tight">Birlikte Çalışalım</h2>
-          <p className="text-slate-500 text-sm mb-8">Projelerimi incelediyseniz ve işbirliği yapmak istiyorsanız aşağıdaki kanallardan ulaşabilirsiniz.</p>
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#00ced1]">CONTACT</span>
+          <h2 className="text-2xl md:text-3xl font-black mb-3 mt-2 tracking-tight">Let's Work Together</h2>
+          <p className="text-slate-500 text-sm mb-8">If you've reviewed my projects and would like to collaborate, feel free to reach out through any of the channels below.</p>
 
-          {/* Email block */}
           <button 
             onClick={copyToClipboard}
             className="w-full md:w-auto mx-auto flex items-center justify-center gap-3 bg-slate-900 border border-slate-800 hover:border-cyan-500/40 rounded-2xl px-6 py-4 mb-6 transition-all group"
@@ -430,7 +456,7 @@ export default function App() {
             <Mail size={18} className="text-[#00ced1]" />
             <span className="text-slate-300 text-sm font-semibold">{personalInfo.email}</span>
             <span className="text-[10px] text-slate-600 group-hover:text-cyan-500 font-bold uppercase tracking-wide transition-colors ml-1">
-              {copied ? '✓ Kopyalandı!' : 'Kopyala'}
+              {copied ? '✓ Copied!' : 'Copy'}
             </span>
           </button>
           
@@ -446,7 +472,7 @@ export default function App() {
             </a>
           </div>
 
-          <p className="text-slate-700 text-[9px] uppercase tracking-[0.4em] font-bold">© 2026 {personalInfo.name} · Veri Odaklı Çözümler</p>
+          <p className="text-slate-700 text-[9px] uppercase tracking-[0.4em] font-bold">© 2026 {personalInfo.name} · Data-Driven Solutions</p>
         </div>
       </footer>
     </div>
