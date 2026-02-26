@@ -87,7 +87,7 @@ export default function App() {
       desc: "Reddit'in r/finance topluluğundaki gönderilerin NLP ve makine öğrenimi ile duygu analizi ve etkileşim tahmini. BigQuery üzerinde EDA, Scikit-learn ile model geliştirme, Looker Studio ile görselleştirme.",
       impact: "Sınıflandırma modelinde %82 doğruluk · 50.000+ gönderi işlendi · Streamlit ile canlı demo sunuldu",
       tags: ["Python", "Machine Learning", "BigQuery", "Looker Studio", "NLP"], 
-      img: "/reddit-cover.png",
+      img: "reddit-cover.png",
       github: "https://github.com/Nisanuraltay/reddit_finance_post_analyzer",
       demo: "https://redditfinancepostanalyzer-5mfm2rzneimsv8pwaa9rpt.streamlit.app/",
       highlight: false,
@@ -100,13 +100,13 @@ export default function App() {
     {
       role: "Veri Analizi & Raporlama",
       company: "Proje Bazlı / Freelance",
-      period: "2023 – Günümüz",
+      period: "2025 – Günümüz",
       desc: "Python, SQL ve Power BI kullanarak supply chain, enerji verimliliği ve kullanıcı davranışı alanlarında veri analizi projeleri yürüttüm. Otomatik raporlama sistemleri ve interaktif dashboard'lar geliştirdim."
     },
     {
       role: "Operasyonel Süreç Yönetimi",
       company: "Önceki Deneyim",
-      period: "2020 – 2023",
+      period: "2022 – 2025",
       desc: "Operasyonel süreçlerin takibi ve koordinasyonu. Çok departmanlı projelerde iletişim köprüsü görevi; süreç iyileştirme ve veri odaklı karar alma altyapısının kurulması."
     }
   ];
@@ -234,7 +234,7 @@ export default function App() {
               My career began in architecture — managing complex technical projects, coordinating cross-functional teams, 
               and optimizing production processes in aluminum facade and construction systems. 
               Over the years I developed a sharp eye for process inefficiency and a habit of working with structured data: 
-              production plans, ERP systems, cost analysis, and technical documentation. 
+              production plans, cost analysis, and technical documentation. 
               That foundation naturally led me into data analytics, where I now apply Python, SQL, and Power BI 
               to turn operational complexity into clear, actionable insight.
             </p>
@@ -251,7 +251,7 @@ export default function App() {
               },
               {
                 role: "Technical Project & Production Planning",
-                company: "VAlüminyum & TİAlüminyum ve Cephe Sistemleri",
+                company: "Alüminyum Cephe Sistemleri",
                 period: "09.2022 – 11.2025",
                 desc: "Led end-to-end technical project management for aluminum facade and joinery manufacturing across two companies. Used Orgadata Logikal for system design and profile optimization; prepared CNC machining files and integrated them into the production workflow. Managed production planning, scheduling, and progress tracking through Excel-based systems — building structured workbooks for job tracking, revision control, and periodic reporting. Coordinated cross-functional communication between design, production, and on-site teams. Handled tender documentation, cost analysis support, and pre-production technical control. Delivered projects including Gaziantep Mövenpick Hotel, Famm Urla, Luna Vista Hotel, AYT T2 Airport Renovation, CW Enerji Fabrikası, Ben-Tour, Remax Aqua, and Tatsan Tarım."
               }
@@ -284,7 +284,7 @@ export default function App() {
               { 
                 title: "Analytics & Reporting", 
                 icon: <BarChart3 size={20} />, 
-                skills: ["Power BI", "Tableau", "Looker Studio", "Dashboard Design", "KPI Tracking"] 
+                skills: ["Power BI", "Looker Studio", "Dashboard Design", "KPI Tracking"] 
               },
               { 
                 title: "Data Architecture & Databases", 
