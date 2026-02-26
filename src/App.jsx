@@ -7,7 +7,6 @@ import {
   BarChart3, 
   LineChart, 
   Code2, 
-  Layers, 
   Building2,
   Zap,
   ExternalLink,
@@ -55,7 +54,6 @@ export default function App() {
       {/* NAVIGATION */}
       <nav className="fixed top-0 left-0 right-0 z-[100] bg-[#020617]/90 backdrop-blur-md border-b border-slate-800/50">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          {/* LOGO - AS REQUESTED: NO ICON, ORIGINAL TEXT STYLE */}
           <div className="cursor-pointer group" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
             <div className={`text-base md:text-lg font-bold ${brandColor} tracking-tighter uppercase leading-none`}>
               {personalInfo.name}
@@ -65,7 +63,6 @@ export default function App() {
             </div>
           </div>
           
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             {['Pathway', 'Skills', 'Projects'].map((item) => (
               <a key={item} href={`#${item.toLowerCase()}`} className="text-slate-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-wider">
@@ -77,7 +74,6 @@ export default function App() {
             </a>
           </div>
 
-          {/* Mobile Menu Toggle */}
           <div className="md:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2 text-slate-300">
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -85,7 +81,6 @@ export default function App() {
           </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
         {isMenuOpen && (
           <div className="md:hidden absolute top-16 left-0 w-full bg-[#020617] border-b border-slate-800 px-6 py-8 flex flex-col gap-6 animate-in slide-in-from-top duration-300 shadow-2xl">
             {['Pathway', 'Skills', 'Projects', 'Contact'].map((item) => (
@@ -109,15 +104,15 @@ export default function App() {
           style={{ background: `radial-gradient(600px at ${mousePos.x}px ${mousePos.y}px, rgba(0, 206, 209, 0.15), transparent 80%)` }}
         />
         <div className="max-w-4xl mx-auto relative z-10">
-          <h1 className="text-2xl md:text-5xl font-black mb-6 md:mb-8 tracking-tight leading-tight uppercase px-2">
+          <h1 className="text-3xl md:text-5xl font-black mb-6 md:mb-8 tracking-tight leading-tight uppercase">
             Designing spaces was my past; <br className="hidden md:block" /> 
             <span className={brandColor}>decoding data</span> is my future.
           </h1>
-          <p className="text-slate-400 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed mb-10 md:mb-12 font-medium px-4">
+          <p className="text-slate-400 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed mb-10 md:mb-12 font-medium">
             Architectural thinking meets data analytics. I focus on uncovering hidden stories in industrial and financial datasets to produce tangible results.
           </p>
           
-          <div className="flex flex-col md:flex-row justify-center items-center gap-4 px-6 md:px-0">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <a href="#contact" className={`${brandBg} w-full md:w-auto text-slate-900 px-8 py-4 rounded-2xl font-bold text-sm transition-all shadow-lg shadow-cyan-500/20 active:scale-95 uppercase`}>
               Get In Touch
             </a>
@@ -128,6 +123,62 @@ export default function App() {
             >
               <Download size={18} /> Download CV
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CAREER JOURNEY (PATHWAY) */}
+      <section id="pathway" className="py-20 md:py-24 px-6 relative bg-[#020617] scroll-mt-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className={`text-[10px] font-bold uppercase tracking-[0.3em] ${brandColor}`}>PATHWAY</span>
+            <h2 className="text-2xl md:text-4xl font-extrabold mt-2 tracking-tight uppercase">Career Journey</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { id: "01", title: "Industrial Foundation", desc: "4 years of technical field and project management experience in the aluminum facade systems industry.", icon: <Building2 size={20} /> },
+              { id: "02", title: "Data Transformation", desc: "Merging sector expertise with Python, SQL, and Power BI to transition manual processes into digital reporting systems.", icon: <LineChart size={20} /> },
+              { id: "03", title: "Sustainability & Insight", desc: "Focusing on driving strategic decision-making through energy efficiency analysis and cross-functional data coordination.", icon: <Zap size={20} /> }
+            ].map((step, i) => (
+              <div key={i} className="bg-[#0f172a]/50 p-8 rounded-[1.5rem] md:rounded-[2rem] border border-slate-800 hover:border-cyan-500/30 transition-all group">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className={`text-xl font-black ${brandColor}`}>{step.id}</span>
+                  <div className="bg-cyan-500/10 p-2 rounded-lg text-[#00ced1] group-hover:scale-110 transition-transform">{step.icon}</div>
+                </div>
+                <h3 className="text-lg md:text-xl font-bold mb-3">{step.title}</h3>
+                <p className="text-slate-400 text-xs md:text-sm leading-relaxed font-medium">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SKILLS */}
+      <section id="skills" className="py-20 md:py-24 px-6 bg-[#030a1c]/30 scroll-mt-20">
+        <div className="max-w-5xl mx-auto text-center">
+          <span className={`text-[10px] font-bold uppercase tracking-[0.3em] ${brandColor}`}>SKILLS</span>
+          <h2 className="text-2xl md:text-4xl font-extrabold mb-12 tracking-tight mt-2 uppercase">Tools & Technologies</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
+            {[
+              { title: "Data Visualization", icon: <BarChart3 size={20} />, skills: ["Power BI", "Tableau", "Looker Studio"] },
+              { title: "SQL & Databases", icon: <Database size={20} />, skills: ["PostgreSQL", "BigQuery", "MySQL"] },
+              { title: "Programming", icon: <Code2 size={20} />, skills: ["Python", "Pandas", "NumPy", "Streamlit"] },
+              { title: "Domain Expertise", icon: <Building2 size={20} />, skills: ["AEC Industry", "Manufacturing", "Supply Chain"] }
+            ].map((cat, i) => (
+              <div key={i} className="bg-[#0f172a]/40 p-6 rounded-[1.5rem] border border-slate-800/50 hover:border-cyan-500/30 transition-all group">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`${brandColor} bg-cyan-500/10 p-2.5 rounded-xl`}>{cat.icon}</div>
+                  <h3 className="text-base font-bold text-slate-100">{cat.title}</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {cat.skills.map((skill) => (
+                    <span key={skill} className="px-3 py-1 bg-slate-800/60 text-slate-400 text-[10px] font-bold rounded-full border border-slate-700/30 uppercase tracking-tight">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -161,7 +212,7 @@ export default function App() {
                 title: "Reddit Finance & ML Prediction", 
                 desc: "Data mining and EDA of investment communities. Built ML models to predict post engagement and visualized strategic insights via Looker Studio.", 
                 tags: ["ML", "BigQuery", "Streamlit"], 
-                img: "reddit-cover.png", 
+                img: "https://images.unsplash.com/photo-1611974717482-58fce4766d33?q=80&w=800", 
                 github: "https://github.com/Nisanuraltay/reddit_finance_post_analyzer",
                 demo: "https://redditfinancepostanalyzer-5mfm2rzneimsv8pwaa9rpt.streamlit.app/"
               }
