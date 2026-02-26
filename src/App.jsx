@@ -26,7 +26,8 @@ export default function App() {
     email: "nisanuraltay07@gmail.com", 
     linkedin: "https://www.linkedin.com/in/nisanuraltay", 
     github: "https://github.com/Nisanuraltay/nurportfolio",
-    cvPath: "/cv.pdf" 
+    cvPath: "/cv.pdf",
+    logoPath: "/logo.png" //logo
   };
 
   useEffect(() => {
@@ -46,218 +47,87 @@ export default function App() {
   const brandColor = "text-[#00ced1]";
   const brandBg = "bg-[#00ced1]";
 
-  // Mobil Menü Kapatma Yardımcısı
-  const handleNavLinkClick = () => {
-    setIsMenuOpen(false);
-  };
-
   return (
     <div className="bg-[#020617] min-h-screen text-white selection:bg-cyan-500/30 font-['Inter',_sans-serif] scroll-smooth">
       
       {/* NAVIGATION */}
-      <nav className="fixed top-0 left-0 right-0 z-[100] bg-[#020617]/80 backdrop-blur-md border-b border-slate-800/50">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="cursor-pointer group" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-            <div className={`text-lg font-bold ${brandColor} tracking-tighter uppercase leading-none`}>
-              {personalInfo.name}
-            </div>
-            <div className="text-[9px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-1">
-              {personalInfo.title}
+      <nav className="fixed top-0 left-0 right-0 z-[100] bg-[#020617]/90 backdrop-blur-lg border-b border-slate-800/50">
+        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+          
+          {/* LOGO ALANI */}
+          <div 
+            className="flex items-center gap-3 cursor-pointer group" 
+            onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
+          >
+            <img 
+              src={personalInfo.logoPath} 
+              alt="Logo" 
+              className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
+            />
+            <div className="hidden sm:block">
+              <div className={`text-sm font-black ${brandColor} tracking-tighter uppercase leading-none`}>
+                {personalInfo.name}
+              </div>
+              <div className="text-[8px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-1">
+                {personalInfo.title}
+              </div>
             </div>
           </div>
           
-          {/* Masaüstü Menü */}
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#about" className="text-slate-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-wider">Pathway</a>
-            <a href="#skills" className="text-slate-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-wider">Skills</a>
-            <a href="#projects" className="text-slate-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-wider">Projects</a>
-            <a href="#contact" className={`${brandBg} text-slate-900 px-5 py-2 rounded-xl font-bold text-xs transition-all active:scale-95 uppercase`}>Get In Touch</a>
+          {/* MENU ALANI (Görsel 1'deki gibi sadece 3 ana başlık) */}
+          <div className="hidden md:flex items-center gap-10">
+            <a href="#about" className="text-slate-400 hover:text-[#00ced1] transition-colors text-xs font-bold uppercase tracking-[0.2em]">Pathway</a>
+            <a href="#skills" className="text-slate-400 hover:text-[#00ced1] transition-colors text-xs font-bold uppercase tracking-[0.2em]">Skills</a>
+            <a href="#projects" className="text-slate-400 hover:text-[#00ced1] transition-colors text-xs font-bold uppercase tracking-[0.2em]">Projects</a>
           </div>
 
-          {/* Mobil Menü Butonu */}
-          <div className="md:hidden flex items-center">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-slate-300 hover:text-white z-50 transition-colors">
+          {/* MOBİL BUTON */}
+          <div className="md:hidden">
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-slate-300 hover:text-[#00ced1] transition-colors">
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
 
         {/* MOBİL MENÜ OVERLAY */}
-        <div className={`fixed inset-0 bg-[#020617] z-40 flex flex-col items-center justify-center gap-8 transition-transform duration-300 ease-in-out md:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <a href="#about" onClick={handleNavLinkClick} className="text-2xl font-black uppercase tracking-widest hover:text-[#00ced1]">Pathway</a>
-          <a href="#skills" onClick={handleNavLinkClick} className="text-2xl font-black uppercase tracking-widest hover:text-[#00ced1]">Skills</a>
-          <a href="#projects" onClick={handleNavLinkClick} className="text-2xl font-black uppercase tracking-widest hover:text-[#00ced1]">Projects</a>
-          <a href="#contact" onClick={handleNavLinkClick} className={`${brandBg} text-slate-900 px-8 py-4 rounded-2xl font-black text-sm uppercase`}>Get In Touch</a>
+        <div className={`fixed inset-0 bg-[#020617] z-40 flex flex-col items-center justify-center gap-10 transition-all duration-500 md:hidden ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+          <a href="#about" onClick={() => setIsMenuOpen(false)} className="text-xl font-bold uppercase tracking-[0.3em] hover:text-[#00ced1]">Pathway</a>
+          <a href="#skills" onClick={() => setIsMenuOpen(false)} className="text-xl font-bold uppercase tracking-[0.3em] hover:text-[#00ced1]">Skills</a>
+          <a href="#projects" onClick={() => setIsMenuOpen(false)} className="text-xl font-bold uppercase tracking-[0.3em] hover:text-[#00ced1]">Projects</a>
+          <button onClick={() => { setIsMenuOpen(false); window.location.href='#contact'; }} className={`${brandBg} text-slate-900 px-8 py-3 rounded-full font-black text-xs uppercase`}>Contact Me</button>
         </div>
       </nav>
 
       {/* HERO SECTION */}
-      <section className="relative pt-44 pb-32 px-6 text-center overflow-hidden">
+      <section className="relative pt-52 pb-32 px-6 text-center overflow-hidden">
         <div 
-          className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-300"
-          style={{ background: `radial-gradient(600px at ${mousePos.x}px ${mousePos.y}px, rgba(0, 206, 209, 0.12), transparent 80%)` }}
+          className="pointer-events-none absolute inset-0 z-0"
+          style={{ background: `radial-gradient(600px at ${mousePos.x}px ${mousePos.y}px, rgba(0, 206, 209, 0.1), transparent 80%)` }}
         />
         <div className="max-w-4xl mx-auto relative z-10">
-          <h1 className="text-3xl md:text-5xl font-black mb-8 tracking-tight leading-tight uppercase">
+          <h1 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter leading-[1.1] uppercase">
             Designing spaces was my past; <br /> 
             <span className={brandColor}>decoding data</span> is my future.
           </h1>
-          <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-12 font-medium">
+          <p className="text-slate-400 text-base md:text-xl max-w-2xl mx-auto leading-relaxed mb-12 font-medium border-l-2 border-cyan-500/30 pl-6">
             Architectural thinking meets data analytics. I focus on uncovering hidden stories in industrial and financial datasets to produce tangible results.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="#contact" className={`${brandBg} text-slate-900 px-8 py-4 rounded-2xl font-bold text-sm transition-all shadow-lg shadow-cyan-500/20 active:scale-95 uppercase`}>
+          <div className="flex flex-wrap justify-center gap-5">
+            <a href="#contact" className={`${brandBg} text-slate-900 px-10 py-5 rounded-2xl font-black text-sm transition-all shadow-xl shadow-cyan-500/20 hover:scale-105 active:scale-95 uppercase tracking-widest`}>
               Get In Touch
             </a>
             <a 
               href={personalInfo.cvPath} 
               download 
-              className="w-full md:w-auto bg-slate-900/50 border-2 border-slate-800 hover:border-slate-600 text-slate-300 px-8 py-4 rounded-2xl font-bold text-sm transition-all active:scale-95 uppercase flex items-center justify-center gap-2"
+              className="w-full md:w-auto bg-slate-900/50 border-2 border-slate-800 hover:border-[#00ced1]/50 text-slate-300 px-10 py-5 rounded-2xl font-black text-sm transition-all active:scale-95 uppercase flex items-center justify-center gap-2 tracking-widest"
             >
-              <Download size={18} /> Download CV
+              <Download size={20} /> Download CV
             </a>
           </div>
         </div>
       </section>
-
-      {/* CAREER JOURNEY */}
-      <section id="about" className="py-24 px-6 relative bg-[#020617] scroll-mt-20">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className={`text-[10px] font-bold uppercase tracking-[0.3em] ${brandColor}`}>PATHWAY</span>
-            <h2 className="text-3xl font-extrabold mt-2 tracking-tight uppercase">Career Journey</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { id: "01", title: "Industrial Foundation", desc: "4 years of technical field and project management experience in the aluminum facade systems industry.", icon: <Building2 size={20} /> },
-              { id: "02", title: "Data Transformation", desc: "Merging sector expertise with Python, SQL, and Power BI to transition manual processes into digital reporting systems.", icon: <LineChart size={20} /> },
-              { id: "03", title: "Sustainability & Insight", desc: "Focusing on driving strategic decision-making through energy efficiency analysis and cross-functional data coordination.", icon: <Zap size={20} /> }
-            ].map((step, i) => (
-              <div key={i} className="bg-[#0f172a]/50 p-8 rounded-[2rem] border border-slate-800 hover:border-cyan-500/30 transition-all group">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className={`text-xl font-black ${brandColor}`}>{step.id}</span>
-                  <div className="bg-cyan-500/10 p-2 rounded-lg text-[#00ced1] group-hover:scale-110 transition-transform">{step.icon}</div>
-                </div>
-                <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed font-medium">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SKILLS */}
-      <section id="skills" className="py-24 px-6 bg-[#030a1c]/30 scroll-mt-20">
-        <div className="max-w-5xl mx-auto text-center">
-          <span className={`text-[10px] font-bold uppercase tracking-[0.3em] ${brandColor}`}>SKILLS</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight mt-2 uppercase">Tools & Technologies</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-left mt-12">
-            {[
-              { title: "Data Visualization", icon: <BarChart3 size={20} />, skills: ["Power BI", "Tableau", "Looker Studio"] },
-              { title: "SQL & Databases", icon: <Database size={20} />, skills: ["PostgreSQL", "BigQuery", "MySQL"] },
-              { title: "Programming", icon: <Code2 size={20} />, skills: ["Python", "Pandas", "NumPy", "Streamlit"] },
-              { title: "Domain Expertise", icon: <Building2 size={20} />, skills: ["AEC Industry", "Manufacturing", "Supply Chain"] }
-            ].map((cat, i) => (
-              <div key={i} className="bg-[#0f172a]/40 p-6 rounded-[1.8rem] border border-slate-800/50 hover:border-cyan-500/30 transition-all group">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`${brandColor} bg-cyan-500/10 p-2.5 rounded-xl`}>{cat.icon}</div>
-                  <h3 className="text-base font-bold text-slate-100">{cat.title}</h3>
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {cat.skills.map((skill) => (
-                    <span key={skill} className="px-3 py-1 bg-slate-800/60 text-slate-400 text-[10px] font-bold rounded-full border border-slate-700/30 uppercase tracking-tight">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PROJECTS SECTION */}
-      <section id="projects" className="py-24 px-6 bg-[#020617] scroll-mt-20">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className={`text-[10px] font-bold uppercase tracking-[0.3em] ${brandColor}`}>PORTFOLIO</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold mt-2 tracking-tight uppercase">Featured Projects</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { 
-                title: "Manufacturing Energy Efficiency", 
-                desc: "Analysis of energy consumption trends in production lines to support sustainability reporting.", 
-                tags: ["Python", "Sustainability", "ETL"], 
-                img: "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800",
-                github: "https://github.com/Nisanuraltay/",
-                demo: "#"
-              },
-              { 
-                title: "Supply Chain Performance", 
-                desc: "A comprehensive analysis of supply chain dynamics including inventory and lead times.", 
-                tags: ["SQL", "Power BI", "Python"], 
-                img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800",
-                github: "https://github.com/Nisanuraltay/",
-                demo: "#"
-              },
-              { 
-                title: "Reddit Finance & ML Prediction", 
-                desc: "Data mining and EDA of investment communities using BigQuery and Streamlit.", 
-                tags: ["BigQuery", "ML", "Streamlit"], 
-                img: "https://images.unsplash.com/photo-1611974717482-58fce4766d33?q=80&w=800",
-                github: "https://github.com/Nisanuraltay/reddit_finance_post_analyzer",
-                demo: "https://redditfinancepostanalyzer-5mfm2rzneimsv8pwaa9rpt.streamlit.app/"
-              }
-            ].map((proj, i) => (
-              <div key={i} className="bg-[#0f172a]/50 rounded-[2rem] overflow-hidden border border-slate-800 hover:border-cyan-500/30 transition-all group">
-                <div className="h-48 overflow-hidden relative">
-                  <img src={proj.img} alt={proj.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                </div>
-                <div className="p-7">
-                  <h3 className="text-lg font-bold mb-3 group-hover:text-[#00ced1] transition-colors">{proj.title}</h3>
-                  <p className="text-slate-400 text-xs leading-relaxed mb-6 font-medium">{proj.desc}</p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {proj.tags.map(t => <span key={t} className="px-3 py-1 bg-cyan-500/10 text-[#00ced1] text-[9px] font-bold rounded-lg uppercase tracking-widest">{t}</span>)}
-                  </div>
-                  <div className="flex gap-4 pt-4 border-t border-slate-800/30">
-                    <a href={proj.github} target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold text-slate-400 hover:text-white flex items-center gap-1.5 uppercase tracking-widest"><Github size={14} /> Code</a>
-                    {proj.demo !== "#" && (
-                      <a href={proj.demo} target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold text-slate-400 hover:text-white flex items-center gap-1.5 uppercase tracking-widest"><ExternalLink size={14} /> Demo</a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT */}
-      <section id="contact" className="py-32 px-6 text-center scroll-mt-20">
-        <div className="max-w-3xl mx-auto relative">
-          {copied && (
-            <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-[#00ced1] text-slate-900 px-4 py-2 rounded-xl text-xs font-bold shadow-lg animate-bounce">
-              Email Address Copied!
-            </div>
-          )}
-          <span className={`text-[10px] font-bold uppercase tracking-[0.4em] ${brandColor} mb-4 block`}>CONTACT</span>
-          <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tight uppercase">Let's Work Together</h2>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
-            <button onClick={copyToClipboard} className="w-full md:w-64 h-16 bg-[#00ced1] text-slate-900 rounded-2xl flex items-center justify-center gap-3 font-bold text-lg hover:shadow-lg hover:shadow-cyan-500/20 transition-all active:scale-95 shadow-xl">
-              <Mail size={22} strokeWidth={2.5} /> Email Me
-            </button>
-            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="w-full md:w-64 h-16 bg-transparent border-2 border-slate-700 hover:border-cyan-500/50 rounded-2xl flex items-center justify-center gap-3 font-bold text-lg transition-all active:scale-95">
-              <Linkedin size={22} strokeWidth={2.5} /> LinkedIn ↗
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <footer className="py-12 border-t border-slate-900 px-6 text-center">
-        <p className="text-slate-600 text-[10px] uppercase tracking-[0.4em] font-bold">© 2026 {personalInfo.name} • BASED IN TURKEY</p>
-      </footer>
+      
     </div>
   );
 }
