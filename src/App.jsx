@@ -188,7 +188,7 @@ export default function App() {
       <section className="relative pt-32 md:pt-44 pb-20 md:pb-32 px-6 overflow-hidden">
         <div 
           className="hidden md:block pointer-events-none absolute inset-0 z-0"
-          style={{ background: `radial-gradient(900px at ${mousePos.x}px ${mousePos.y}px, rgba(0, 206, 209, 0.25), transparent 70%)` }}
+          style={{ background: `radial-gradient(500px at ${mousePos.x}px ${mousePos.y}px, rgba(0, 206, 209, 0.13), transparent 60%)` }}
         />
         {/* Subtle grid bg */}
         <div className="pointer-events-none absolute inset-0 z-0 opacity-[0.03]" style={{backgroundImage: 'linear-gradient(rgba(0,206,209,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,206,209,1) 1px, transparent 1px)', backgroundSize: '60px 60px'}} />
