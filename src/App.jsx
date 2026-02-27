@@ -85,7 +85,7 @@ export default function App() {
       id: "03",
       title: "Reddit Finance Community — Sentiment & Engagement Prediction via ML", 
       desc: "Performed sentiment analysis and engagement prediction on r/finance posts using NLP and Machine Learning. Conducted EDA on BigQuery, developed models with Scikit-learn, and visualized insights via Looker Studio.",
-      impact: "Sınıflandırma modelinde %82 doğruluk · 50.000+ gönderi işlendi · Streamlit ile canlı demo sunuldu",
+      impact: "Achieved 82% accuracy in classification models · Processed 50,000+ posts · Deployed live Streamlit demo",
       tags: ["Python", "Machine Learning", "BigQuery", "Looker Studio", "NLP"], 
       img: "reddit-cover.png",
       github: "https://github.com/Nisanuraltay/reddit_finance_post_analyzer",
