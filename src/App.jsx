@@ -60,8 +60,8 @@ export default function App() {
     { 
       id: "01",
       title: "Supply Chain & Lojistik Performans Analizi", 
-      desc: "Tedarik zincirinin uçtan uca analizi: temin süresi varyasyonları, stok devir hızı ve lojistik maliyet dağılımı incelendi. Tespit edilen darboğazlar için iyileştirme önerileri sunuldu.",
-      impact: "Lead time'da %18 iyileştirme potansiyeli tespit edildi · Fill rate ve OTIF metrikleri dashboard'a entegre edildi",
+      desc: "Analyzed 180K+ orders across 164 countries to identify delivery bottlenecks. Built interactive Power BI dashboard with 20+ visualizations and SQL database with analytical queries.",
+      impact: "Identified $31M revenue optimization opportunity through 33% delay reduction strategy.",
       tags: ["SQL", "Power BI", "EDA", "Process Optimization"], 
       img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800",
       github: "https://github.com/Nisanuraltay/supply-chain-performance-analysis",
