@@ -59,7 +59,7 @@ export default function App() {
   const projects = [
     { 
       id: "01",
-      title: "Supply Chain & Lojistik Performans Analizi", 
+      title: "Supply Chain & Logistics Performance Analysis", 
       desc: "Analyzed 180K+ orders across 164 countries to identify delivery bottlenecks. Built interactive Power BI dashboard with 20+ visualizations and SQL database with analytical queries.",
       impact: "Identified $31M revenue optimization opportunity through 33% delay reduction strategy.",
       tags: ["SQL", "Power BI", "EDA", "Process Optimization"], 
@@ -67,31 +67,31 @@ export default function App() {
       github: "https://github.com/Nisanuraltay/supply-chain-performance-analysis",
       demo: null,
       highlight: true,
-      sector: "Supply Chain · Lojistik"
+      sector: "Supply Chain · Logistics"
     },
     { 
       id: "02",
-      title: "Üretim Enerji Verimliliği & Sürdürülebilirlik Analizi", 
-      desc: "Üretim sürecindeki enerji tüketim verilerinin Python ile analizi. Operasyonel verimsizlik kaynakları tespit edildi, sürdürülebilirlik hedeflerine yönelik veri setleri oluşturuldu ve raporlandı.",
-      impact: "3 temel verimsizlik faktörü belirlendi · %15 maliyet azaltım potansiyeli önerildi · Otomatik raporlama pipeline kuruldu",
-      tags: ["Python", "Pandas", "Sürdürülebilirlik", "Raporlama"], 
+      title: "Manufacturing Energy Efficiency & Predictive Maintenance AI", 
+      desc: "End-to-end Python analysis of 10,000 machine records. Identified 418 high-risk units using IQR outlier detection, engineered 6 custom features, and implemented SQL cost segmentation alongside a Random Forest ML model.",
+      impact: "Identified 418 high-risk machines · Calculated ₺2.96M annual cost impact · 100% accuracy ML model · Deployed live Streamlit dashboard",
+      tags: ["Python", "SQL", "Random Forest", "Streamlit", "Plotly"], 
       img: "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800",
       github: "https://github.com/Nisanuraltay/manufacturing-energy-efficiency",
-      demo: null,
+      demo: "https://nisanuraltay-manufacturing-energy-efficiency.streamlit.app/#3d5df4cd",
       highlight: true,
-      sector: "Üretim · Enerji · Sürdürülebilirlik"
+      sector: "Manufacturing · Energy · Machine Learning"
     },
     { 
       id: "03",
-      title: "Reddit Finans Topluluğu — ML ile Duygu & Etkileşim Tahmini", 
-      desc: "Reddit'in r/finance topluluğundaki gönderilerin NLP ve makine öğrenimi ile duygu analizi ve etkileşim tahmini. BigQuery üzerinde EDA, Scikit-learn ile model geliştirme, Looker Studio ile görselleştirme.",
+      title: "Reddit Finance Community — Sentiment & Engagement Prediction via ML", 
+      desc: "Performed sentiment analysis and engagement prediction on r/finance posts using NLP and Machine Learning. Conducted EDA on BigQuery, developed models with Scikit-learn, and visualized insights via Looker Studio.",
       impact: "Sınıflandırma modelinde %82 doğruluk · 50.000+ gönderi işlendi · Streamlit ile canlı demo sunuldu",
       tags: ["Python", "Machine Learning", "BigQuery", "Looker Studio", "NLP"], 
       img: "reddit-cover.png",
       github: "https://github.com/Nisanuraltay/reddit_finance_post_analyzer",
       demo: "https://redditfinancepostanalyzer-5mfm2rzneimsv8pwaa9rpt.streamlit.app/",
       highlight: false,
-      sector: "Fintech · Sosyal Medya Analitiği"
+      sector: "Fintech · Social Media Analytics"
     }
   ];
 
@@ -251,7 +251,7 @@ export default function App() {
               },
               {
                 role: "Technical Project & Production Planning",
-                company: "Alüminyum Cephe Sistemleri",
+                company: "Aluminum Facade Systems",
                 period: "09.2022 – 11.2025",
                 desc: "Led end-to-end technical project management for aluminum facade and joinery manufacturing across two companies. Used Orgadata Logikal for system design and profile optimization; prepared CNC machining files and integrated them into the production workflow. Managed production planning, scheduling, and progress tracking through Excel-based systems — building structured workbooks for job tracking, revision control, and periodic reporting. Coordinated cross-functional communication between design, production, and on-site teams. Handled tender documentation, cost analysis support, and pre-production technical control. Delivered projects including Gaziantep Mövenpick Hotel, Famm Urla, Luna Vista Hotel, AYT T2 Airport Renovation, CW Enerji Fabrikası, Ben-Tour, Remax Aqua, and Tatsan Tarım."
               }
