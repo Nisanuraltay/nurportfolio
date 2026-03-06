@@ -32,7 +32,7 @@ export default function App() {
     email: "nisanuraltay07@gmail.com", 
     linkedin: "https://www.linkedin.com/in/nisanuraltay", 
     github: "https://github.com/Nisanuraltay/nurportfolio",
-    cvPath: "/cv.pdf" 
+    cvPath: "/nurportfolio/cv.pdf"
   };
 
   useEffect(() => {
